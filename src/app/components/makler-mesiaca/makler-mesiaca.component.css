@@ -1,0 +1,133 @@
+.equal {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .equal > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+  }
+
+.circlebox {
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    z-index: 999;
+    border-radius: 50%;
+    border: 0px solid;
+    border-color: rgba(134, 177, 209, 0.9);
+    width: 75%;
+    display: block;
+    margin: 0 auto 0 auto;
+    max-width: 767px;
+    max-height: 767px;
+}
+
+.circlecontainer {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    text-align: center;
+}
+
+.profilebox {
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+@media (max-width: 767px) {
+    .profilebox {
+        z-index: 999;
+        border-radius: 50%;
+        border: 0px solid;
+        border-color: rgba(134, 177, 209, 0.9);
+        width: 65%;
+        display: block;
+        margin: 0 auto 0 auto;
+        max-width: 230px;
+        max-height: 230px;
+    }
+}
+
+@media (min-width: 768px) {
+    .profilebox {
+        z-index: 999;
+        border-radius: 50%;
+        border: 0px solid;
+        border-color: rgba(134, 177, 209, 0.9);
+        width: 80%;
+        display: block;
+        margin: 0 auto 0 auto;
+        max-width: 230px;
+        max-height: 230px;
+    }
+}
+
+.makmes {
+    color: #555 !important;
+    font-size: 30px !important;
+    font-weight: 400 !important;
+}
+
+.profiletext {
+    color: #555;
+    padding-top: 15px;
+    padding-left: 42px;
+    padding-right: 42px;
+    padding-bottom: 62px;
+    height: auto;
+    font-weight: 400;
+    text-align: justify;
+    font-size: 16px;
+}
+
+.profname {
+    font-weight: 400;
+    font-size: 1.75rem;
+}
+
+.proflink a:link {
+    color: #555;
+}
+
+.proflink a:visited {
+    color: #555;
+}
+
+
+.smaller {
+    width: 90%;
+}
+
+.iconcontainer {
+    position: absolute;
+    left: 10%;
+    width: 85%;
+    padding-top: 20px;
+    bottom: 0px;
+}
+@media screen and (max-width: 767px) {
+    .iconcontainer {
+        position: relative;
+        width: 80%;
+        height: 70px;
+    }
+}
+.iconcontainer h5 {
+    color: #555;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+.iconcontainer hr {
+    margin-bottom: 10px;
+    margin-top: 0px;
+    border: 0.4px solid white;
+    width: 100%;
+}
+
+
+
+.prop {
+    height: 100%;
+    margin-top: 35px;
+}

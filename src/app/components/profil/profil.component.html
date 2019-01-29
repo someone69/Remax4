@@ -1,0 +1,176 @@
+<div class="container-fluid" id="profiles">
+    <div>
+        <h2><label for="makmes">Nehnuteľnosť mesiaca</label></h2>
+        <div [class.hidden]="!showprop" class="shadow">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="m-4">
+                        <img class="img-fluid" src="{{ makmes.house.pic }}">
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="m-4">
+                        <div>
+                            Názov:
+                            <input type="text" class="form-control" placeholder="title" [(ngModel)]="makmes.house.title">
+                        </div>
+                        <div>
+                            Cena: <input type="text" class="form-control" placeholder="cena" [(ngModel)]="makmes.house.price">
+                        </div>
+                        <div>
+                            Izby: <input type="text" class="form-control" placeholder="izby" [(ngModel)]="makmes.house.rooms">
+                        </div>
+                        <div>
+                            Rozloha: <input type="text" class="form-control" placeholder="rozloha" [(ngModel)]="makmes.house.size">
+                        </div>
+                        <div>
+                            Adresa:
+                            <input type="text" class="form-control" placeholder="adresa" [(ngModel)]="makmes.house.address">
+                        </div>
+                        <div>
+                            Zákazka:
+                            <input type="text" class="form-control" placeholder="cislo zakazky" [(ngModel)]="makmes.house.propid">
+                        </div>
+                        <ul>
+                            <li>{{ makmes.firstName }} {{ makmes.lastName }}</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <input id="makmes" type="text" class="form-control mb-2 mt-2" placeholder="Link nehnuteľnosti" [(ngModel)]="makmes.url">
+            <button (click)="saveMakmes()" type="button" class="btn btn-success mb-2">Save</button>
+            <button (click)="processMakmes(makmes)" type="button" class="btn btn-success mb-2">load</button>
+        </div>
+
+    </div>
+    <div class="row equal">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" *ngFor="let makler of team; let index=index"
+            [class.profilecontainerA]="index % 4 == 0" [class.profilecontainerB]="index % 4 == 1"
+            [class.profilecontainerC]="index % 4 == 2" [class.profilecontainerD]="index % 4 == 3">
+            <div class="row">
+                <div class="edit ml-2 mt-2 col-12">
+                    <button (click)="editMakler(index)" type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#editor"><i class="fa fa-pencil"></i></button>
+                    <button (click)="deleteMakler(index)" type="button" class="btn btn-danger"><i class="fa fa-times"></i></button>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                    <div class="circlecontainer">
+                        <a><img class="profilebox img-fluid" src="{{ makler.img }}"></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                    <div class="profileinfo black">
+                        <h2 class="profname">{{ makler.titul + " " + makler.firstName + " " + makler.lastName }}</h2>
+                        <h3 class="proffx">{{ makler.position }}</h3>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h4 class="profiletext black" [innerHtml]=makler.bio.sk>
+                    </h4>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height:70px;"></div>
+                <div class="iconcontainer text-center row">
+                    <hr>
+                    <h4 class="proflink proftel col-4">
+                        <a href="tel:{{ makler.tel }}">
+                            <i class="blue fa fa-phone"></i>
+                            <br>
+                            <h5>Volať</h5>
+                        </a>
+                    </h4>
+                    <h4 class="proflink profmail col-4">
+                        <a href="mailto:{{ makler.email }}">
+                            <i class="blue fa fa-at"></i>
+                            <h5>Mail</h5>
+                        </a>
+                    </h4>
+                    <h4 class="proflink profweb col-4">
+                        <a href="{{ makler.web }}">
+                            <i class="blue fa fa-globe"></i>
+                            <h5>Web</h5>
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 centerVH">
+            <button (click)="editMakler(-1)" type="button" class="btn btn-primary btn-circle btn-xl" data-toggle="modal"
+                data-target="#editor"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="editor">
+    <div class="modal-dialog">
+        <div class="modal-content profilecontainerA">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">{{ editable.firstName }} {{ editable.lastName }}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <div class="circlecontainer">
+                                    <a><img class="profilebox img-fluid" src="{{ editable.img }}"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <div class="profileinfo black">
+                                    <h2 class="profname">
+                                        <input type="text" class="form-control" placeholder="Titul" [(ngModel)]="editable.titul">
+                                        <input type="text" class="form-control" placeholder="Meno" [(ngModel)]="editable.firstName">
+                                        <input type="text" class="form-control" placeholder="Priezvisko" [(ngModel)]="editable.lastName">
+                                    </h2>
+                                    <h3 class="proffx">
+                                        <input type="text" class="form-control" placeholder="Pozícia" [(ngModel)]="editable.position">
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <label for="biosk">Popis SK</label>
+                                <textarea id="biosk" rows="5" class="form-control" [(ngModel)]="editable.bio.sk"></textarea>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <label for="biohu">Popis HU</label>
+                                <textarea id="biohu" rows="5" class="form-control" [(ngModel)]="editable.bio.hu"></textarea>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height:70px;"></div>
+                            <div class=" text-center row">
+                                <hr>
+                                <h4 class="proflink proftel col-4">
+                                    <i class="blue fa fa-phone"></i>
+                                    <br>
+                                    <input type="text" class="form-control" [(ngModel)]="editable.tel">
+                                </h4>
+                                <h4 class="proflink profmail col-4">
+                                    <i class="blue fa fa-at"></i>
+                                    <input type="text" class="form-control" [(ngModel)]="editable.email">
+                                </h4>
+                                <h4 class="proflink profweb col-4">
+                                    <i class="blue fa fa-globe"></i>
+                                    <input type="text" class="form-control" [(ngModel)]="editable.web">
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button (click)="saveMakler()" type="button" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>

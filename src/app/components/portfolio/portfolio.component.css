@@ -1,0 +1,26 @@
+.circlecontainer {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    text-align: center;
+}
+.circlecontainer h4 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding-top: 15px;
+}
+.circlebox:hover {
+    border: 3px solid;
+}
+
+.circlebox {
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    z-index: 999;
+    border-radius: 50%;
+    border: 0px solid;
+    border-color: rgba(134, 177, 209, 0.9);
+    width: 75%;
+    display: block;
+    margin: 0 auto 0 auto;
+    max-width: 767px;
+    max-height: 767px;
+}

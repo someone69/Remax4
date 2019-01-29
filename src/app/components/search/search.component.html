@@ -1,0 +1,64 @@
+<div class="search">
+  <div class="col-md-12">
+      <div class="input-group shadow" id="adv-search">
+          <input onkeypress="return searchkeyenter(event)" id="desc_text" name="desc_text" type="text" class="form-control" placeholder="Hľadať" />
+          <div class="input-group-btn">
+              <div class="btn-group" role="group">
+                  <button type="button" id="searchkey" class="btn btn-primary"><span class="fa fa-search" aria-hidden="true"></span></button>
+                  <div class="dropdown dropdown-lg">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                      <div class="dropdown-menu dropdown-menu-right" role="menu">
+                          <form method="get" action="http://www.remax-slovakia.sk/reality/nehnutelnosti-kancelare/354044/re-max-attractive/" class="form-horizontal" role="form">
+                              <div class="row">
+                                  <div class="form-group col-sm-4">
+                                      <label for="sale">Predaj - prenájom</label>
+                                      <select id="sale" name="sale" class="searchfield form-control">
+                                          <option value="1" selected>Predaj</option>
+                                          <option value="2">Prenájom</option>
+                                          <option value="0">Všetko</option>
+                                      </select>
+                                  </div>
+                                  <div class="form-group col-sm-4">
+                                      <label for="typneh">Typ</label>
+                                      <input type="hidden" id="stypnehp" name="types[4][11]" value="on">
+                                      <select id="stypneh" class="searchfield form-control">
+                                          <option value="4" selected>Byty</option>
+                                          <option value="6">Domy a vily</option>
+                                          <option value="3">Pozemky</option>
+                                          <option value="91">Komerčné nehnuteľnosti</option>
+                                          <option value="92">iné</option>
+                                      </select>
+
+
+                                  </div>
+                                  <div id="pocetcontainer" class="form-group col-sm-4">
+                                      <label for="pocet">Počet izieb</label>
+                                      <select id="spocet" class="searchfield form-control">
+                                          <option value="1">Garsónka</option>
+                                          <option value="9">1-izb.</option>
+                                          <option value="10">2-izb.</option>
+                                          <option value="11" selected>3-izb.</option>
+                                          <option value="12">4-izb.</option>
+                                          <option value="13">5 a viac-izb.</option>
+                                          <option value="17">iné</option>
+                                      </select>
+                                  </div>
+                                  <div class="form-group col-sm-6">
+                                      <label for="pricel">Cena od <b>€</b></label>
+                                      <input name="price_from" class="form-control" type="number" placeholder="€" />
+                                  </div>
+                                  <div class="form-group col-sm-6">
+                                      <label for="priceh">Cena do <b>€</b></label>
+                                      <input name="price_to" class="form-control" type="number" placeholder="€" />
+                                  </div>
+                              </div>
+                              <button type="submit" id="search" class="searchr btn btn-primary"><span class="fa fa-search" aria-hidden="true"></span></button>
+                          </form>
+                      </div>
+                  </div>
+          
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

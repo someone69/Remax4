@@ -1,0 +1,25 @@
+.navbar {
+    background-color: rgba(160, 160, 160, .5) !important;
+}
+
+.attractive {
+    max-height: 50px;
+    margin-top: 5px;
+    padding-left: 15px;
+}
+
+.ballon {
+    max-height: 110px;
+    margin-bottom: -50px;
+}
+
+.ballonm {
+    margin-right: -15px;
+}
+
+.nav-item a {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+}

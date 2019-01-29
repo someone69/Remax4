@@ -1,0 +1,42 @@
+<div class="container">
+<div class="row section equal">
+  <h1 class="makmes text-center col-12">Maklér mesiaca december odporúča:</h1>
+  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+      <a href="http://www.remax-slovakia.sk/reality/nehnutelnosti-maklera/2548/alzbeta-csibova/">
+          <div class="circlecontainer">
+              <img class="profilebox smaller img-fluid" src="{{ user.img }}">
+          </div>
+          <h2 class="blue text-center profname">{{ user.titul + " " + user.firstName + " " + user.lastName }}</h2>
+      </a>
+
+      <h4 class="profiletext black" [innerHtml]=user.bio.sk></h4>
+      <br>
+      <div class="iconcontainer text-center row">
+        <hr>
+        <h4 class="proflink proftel col-4">
+            <a href="tel:{{ user.tel }}">
+                <i class="blue fa fa-phone"></i>
+                <br>
+                <h5>Volať</h5>
+            </a>
+        </h4>
+        <h4 class="proflink profmail col-4">
+            <a href="mailto:{{ user.email }}">
+                <i class="blue fa fa-at"></i>
+                <h5>Mail</h5>
+            </a>
+        </h4>
+        <h4 class="proflink profweb col-4">
+            <a href="{{ user.web }}">
+                <i class="blue fa fa-globe"></i>
+                <h5>Web</h5>
+            </a>
+        </h4>
+    </div>
+  </div>
+  <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 prop">
+      <app-nehnutelnost></app-nehnutelnost>
+  </div>
+</div>
+
+</div>

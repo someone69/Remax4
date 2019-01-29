@@ -1,0 +1,71 @@
+.propertycontainer {
+    min-width: 200px;
+    width: 90%;
+    margin: 0 auto;
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    background-color: white;
+}
+
+.propertydesc {
+    min-height: 80px;
+    line-height: 80px;
+    background-color: lightblue;
+}
+
+.propertydesc h2 {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+@media (max-width: 910px) {
+    .propertydesc h2 {
+        font-size: 24px;
+    }
+}
+
+.propertyic {
+    display: block;
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 120px;
+    background-color: white;
+}
+
+.propertyic > div {
+    width: 50%;
+    float: left;
+    padding-left: 18px;
+    padding-top: 18px;
+    padding-bottom: 0px;
+    font-size: 16px;
+    font-weight: 800;
+    color: darkgray;
+}
+
+.price {
+    margin-top: -30px;
+    left: 0px;
+    padding-left: 24px;
+}
+
+.price h2 {
+    margin-top: 0px;
+    color: white;
+    font-size: 24px;
+}
+
+.price .region {
+    font-size: 16px;
+    color: #f5f5f5;
+    font-weight: 600;
+}
+
+.propertyhr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-color: lightgray;
+}
+
