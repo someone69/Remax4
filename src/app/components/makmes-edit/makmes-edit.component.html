@@ -1,0 +1,47 @@
+<div>
+    <h2><label for="makmes">Nehnuteľnosť mesiaca</label></h2>
+    <div [class.hidden]="!showprop" class="shadow">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <div class="m-4">
+                    <img class="img-fluid" src="{{ makmes.house.pic }}">
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="m-4">
+                    <div>
+                        Názov:
+                        <input type="text" class="form-control" placeholder="title" [(ngModel)]="makmes.house.title">
+                    </div>
+                    <div>
+                        Cena: <input type="text" class="form-control" placeholder="cena" [(ngModel)]="makmes.house.price">
+                    </div>
+                    <div>
+                        Izby: <input type="text" class="form-control" placeholder="izby" [(ngModel)]="makmes.house.rooms">
+                    </div>
+                    <div>
+                        Rozloha: <input type="text" class="form-control" placeholder="rozloha" [(ngModel)]="makmes.house.size">
+                    </div>
+                    <div>
+                        Adresa:
+                        <input type="text" class="form-control" placeholder="adresa" [(ngModel)]="makmes.house.address">
+                    </div>
+                    <div>
+                        Zákazka:
+                        <input type="text" class="form-control" placeholder="cislo zakazky" [(ngModel)]="makmes.house.propid">
+                    </div>
+                    <ul>
+                        <li>{{ makmes.firstName }} {{ makmes.lastName }}</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <input id="makmes" type="text" class="form-control mb-2 mt-2" placeholder="Link nehnuteľnosti" [(ngModel)]="makmes.url">
+        <button (click)="saveMakmes()" type="button" class="btn btn-success mb-2">Save</button>
+        <button (click)="processMakmes(makmes)" type="button" class="btn btn-success mb-2">load</button>
+    </div>
+
+</div>

@@ -18,6 +18,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { TeamComponent } from './components/team/team.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { TeamEditComponent } from './components/team-edit/team-edit.component';
+import { MakmesEditComponent } from './components/makmes-edit/makmes-edit.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { FooterComponent } from './components/footer/footer.component';
     ProfilComponent,
     HomeComponent,
     TeamComponent,
-    FooterComponent
+    FooterComponent,
+    TeamEditComponent,
+    MakmesEditComponent
   ],
   imports: [
     BrowserModule,

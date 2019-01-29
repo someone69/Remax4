@@ -16,9 +16,7 @@ export class TeamComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.loadTeam().subscribe(data => {
-      this.dataService.team = data;
-      this.team = this.dataService.team;
-      console.log(this.team);
+      this.team = data;
     });  }
 
 }

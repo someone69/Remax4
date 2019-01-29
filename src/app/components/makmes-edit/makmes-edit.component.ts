@@ -1,0 +1,57 @@
+import { Component, OnInit, SystemJsNgModuleLoader, EventEmitter, Output } from '@angular/core';
+import { Makler } from "../../models/makler";
+import { Makmes } from "../../models/makmes";
+import { DataService } from "../../services/data-service";
+
+@Component({
+  selector: 'app-makmes-edit',
+  templateUrl: './makmes-edit.component.html',
+  styleUrls: ['./makmes-edit.component.css']
+})
+export class MakmesEditComponent implements OnInit {
+
+  makmes: Makmes = {
+    url: "",
+    html: "",
+    name: "",
+    house: {
+      pic: "",
+      price: "",
+      title: "",
+      address: "",
+      propid: "",
+      rooms: "",
+      size: ""
+    }
+  };
+  showprop: boolean = false;
+
+  constructor(private dataService: DataService) {
+  }
+
+  ngOnInit() {
+
+    this.loadMakmes();
+    this.processMakmes(this.makmes);
+
+  }
+
+  loadMakmes() {
+    this.dataService.loadMakmes().subscribe(data => {
+      this.dataService.makmes = JSON.parse(data[0]);
+      this.makmes = this.dataService.makmes;
+      console.log(this.makmes);
+    });
+  }
+
+  processMakmes(makmes: Makmes) {
+    this.showprop = false;
+    this.dataService.processMakmes(makmes);
+    this.showprop = true;
+  }
+
+  saveMakmes() {
+    this.dataService.saveMakmes(this.makmes);
+  }
+
+}

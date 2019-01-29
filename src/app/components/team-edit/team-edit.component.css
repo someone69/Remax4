@@ -1,0 +1,192 @@
+.equal {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .equal > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+  }
+.profilecontainerA {
+    background-color: lightgray;
+}
+.profilecontainerB {
+    background-color: darkgray;
+}
+.profilecontainerD {
+    background-color: lightgray;
+}
+.profilecontainerC {
+    background-color: darkgray;
+}
+@media (max-width: 767px) {
+    .profilecontainerA,
+    .profilecontainerB,
+    .profilecontainerC,
+    .profilecontainerD
+     {
+        height: auto;
+    }
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+  }
+
+@media (max-width: 767px) {
+    .profilecontainerC
+     {
+        background-color: lightgray;
+     }
+}
+
+@media (max-width: 767px) {
+    .profilecontainerD
+     {
+        background-color: darkgray;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .profilecontainerA,
+    .profilecontainerB,
+    .profilecontainerC,
+    .profilecontainerD {
+        color: black
+    }
+}
+
+.profiletext {
+    padding-top: 25px;
+    padding-left: 42px;
+    padding-right: 42px;
+    padding-bottom: 42px;
+    height: auto;
+    font-weight: 400;
+    text-align: justify;
+    font-size: 16px;
+}
+
+@media (max-width: 991px) {
+    .profiletext {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+.profname {
+    font-weight: 400;
+    font-size: 1.75rem;
+}
+.proflink a:link {
+    color:#555;
+}
+.proflink a:visited {
+    color: #555;
+}
+
+.circlebox {
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    z-index: 999;
+    border-radius: 50%;
+    border: 0px solid;
+    border-color: rgba(134, 177, 209, 0.9);
+    width: 75%;
+    display: block;
+    margin: 0 auto 0 auto;
+    max-width: 767px;
+    max-height: 767px;
+}
+
+.profilebox {
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+@media (max-width: 767px) {
+    .profilebox {
+        z-index: 999;
+        border-radius: 50%;
+        border: 0px solid;
+        border-color: rgba(134, 177, 209, 0.9);
+        width: 65%;
+        display: block;
+        margin: 0 auto 0 auto;
+        max-width: 230px;
+        max-height: 230px;
+    }
+}
+@media (min-width: 768px) {
+    .profilebox {
+        z-index: 999;
+        border-radius: 50%;
+        border: 0px solid;
+        border-color: rgba(134, 177, 209, 0.9);
+        width: 80%;
+        display: block;
+        margin: 0 auto 0 auto;
+        max-width: 230px;
+        max-height: 230px;
+    }
+}
+@media (max-width: 991px) {
+    .profileinfo {
+        text-align: center;
+        padding-top: 0px;
+    }
+}
+@media (min-width: 992px) {
+    .profileinfo {
+        text-align: right;
+        padding-top: 35px;
+        padding-right: 42px;
+    }
+}
+
+.proffx {
+    color: #337ab7;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.circlebox:hover {
+    border: 3px solid;
+}
+.circlecontainer {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    text-align: center;
+}
+
+.iconcontainer {
+    position: absolute;
+    left: 10%;
+    width: 85%;
+    bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+    .iconcontainer {
+        position: relative;
+        width: 80%;
+        height: 70px;
+    }
+}
+.iconcontainer h5 {
+    color: #555;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+.iconcontainer hr {
+    margin-bottom: 10px;
+    margin-top: 0px;
+    border: 0.4px solid white;
+    width: 100%;
+}
+
