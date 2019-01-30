@@ -63,14 +63,6 @@ export class DataService {
     return this.http.get<Makler[]>(this.teamUrl);
   }
 
-  getTeam(): Makler[] {
-    return this.team;
-  }
-
-  setTeam(users: Makler[]){
-    this.team = users;
-  }
-
   saveTeam(team: Makler[]){
     const req = this.http.post(this.saveTeamUrl, team)
     .subscribe(
