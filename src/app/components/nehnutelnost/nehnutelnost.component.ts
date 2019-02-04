@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from "../../services/data-service"
 import { Property } from '../../models/property';
 import { Makmes } from '../../models/makmes';
@@ -10,14 +10,13 @@ import { Makmes } from '../../models/makmes';
   styleUrls: ['./nehnutelnost.component.css']
 })
 export class NehnutelnostComponent implements OnInit {
-  makmes: Makmes;
+  @Input() makmes: Makmes;
   nehnutelnost: Property;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.makmes = this.dataService.getMakmes();
-    console.log(this.makmes);
+
   }
 
 }

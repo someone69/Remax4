@@ -1,6 +1,5 @@
 import { Component, OnInit, SystemJsNgModuleLoader, EventEmitter, Output } from '@angular/core';
 import { Makler } from "../../models/makler";
-import { Makmes } from "../../models/makmes";
 import { DataService } from "../../services/data-service";
 
 //declare var jquery: any;
@@ -22,6 +21,7 @@ export class ProfilComponent implements OnInit {
   ngOnInit() {
     this.dataService.loadTeam().subscribe(data => {
       this.team = data;
+      this.dataService.team = this.team;
     });
   }
 }

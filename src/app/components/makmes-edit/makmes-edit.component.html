@@ -30,8 +30,9 @@
                         Zákazka:
                         <input type="text" class="form-control" placeholder="cislo zakazky" [(ngModel)]="makmes.house.propid">
                     </div>
-                    <ul>
-                        <li>{{ makmes.firstName }} {{ makmes.lastName }}</li>
+                    <ul *ngIf="makmes.makler!=null">
+                        <li>{{ makmes.makler.firstName }} {{ makmes.makler.lastName }}</li>
+                        <li>{{ makmes.makler.bio.sk }}</li>
                     </ul>
                 </div>
 

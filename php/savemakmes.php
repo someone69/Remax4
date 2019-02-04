@@ -8,4 +8,5 @@ $fp = fopen('makmes.json', 'w');
 fwrite($fp, $response);
 fclose($fp);
 
+echo $response;
 ?> 

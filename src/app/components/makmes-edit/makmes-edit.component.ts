@@ -32,21 +32,21 @@ export class MakmesEditComponent implements OnInit {
   ngOnInit() {
 
     this.loadMakmes();
-    this.processMakmes(this.makmes);
-
   }
 
   loadMakmes() {
     this.dataService.loadMakmes().subscribe(data => {
-      this.dataService.makmes = JSON.parse(data[0]);
-      this.makmes = this.dataService.makmes;
-      console.log(this.makmes);
+      this.makmes = JSON.parse(data[0]);
+      this.showprop = true;
     });
   }
 
   processMakmes(makmes: Makmes) {
     this.showprop = false;
-    this.dataService.processMakmes(makmes);
+    this.dataService.getPage(makmes.url).subscribe(data => {
+      this.makmes = this.dataService.processMakmes(data, makmes.url);
+      console.log(this.dataService.makmes);
+    })
     this.showprop = true;
   }
 

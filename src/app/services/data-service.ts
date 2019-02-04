@@ -21,6 +21,7 @@ export class DataService {
     "img": "",
     "tel": "",
     "email": "",
+    "webnehnutelnosti": "",
     "web": "",
     "bio": {
       "sk": "",
@@ -95,23 +96,24 @@ export class DataService {
     return this.http.get<Makmes>(this.scrapeUrl + this.makmesUrl);
   }
 
-  processMakmes(makmes: Makmes) {
-    this.makmes = makmes;
-    this.getPage(makmes.url).subscribe(data => {
-      makmes.html = data[0];
-      var LI = $(makmes.html);
-      makmes.name = LI.find('div.broker-details').find('h4').find('a').text();
-      makmes.firstName = makmes.name.substr(0, makmes.name.indexOf(" "));
-      makmes.lastName = makmes.name.substr(makmes.name.indexOf(" ") + 1, makmes.name.length - 1);
+  processMakmes(data: any, url: string): Makmes {
+    
+      this.makmes.url = url;
+      this.makmes.html = data[0];
+      var LI = $(this.makmes.html);
+      this.makmes.name = LI.find('div.broker-details').find('h4').find('a').text();
+      this.makmes.firstName = this.makmes.name.substr(0, this.makmes.name.indexOf(" "));
+      this.makmes.lastName = this.makmes.name.substr(this.makmes.name.indexOf(" ") + 1, this.makmes.name.length - 1);
       //var proplink = LI.find('.image-link').attr('href');
-      makmes.house.pic = LI.find('div.ad-image a').attr('href');
-      makmes.house.title = LI.find('h1[itemprop="name"]').text();
-      makmes.house.address = LI.find('td[itemprop="address"]').text();
-      makmes.house.price = LI.find('span[itemprop="priceRange"]').text().replace('/Za nehnuteľnosť', '');
-      makmes.house.size = LI.find('td:contains("Celková plocha")').next().text();
-      makmes.house.propid = LI.find('td:contains("Číslo zakázky")').next().text();
-      makmes.makler = this.team.find(e => e.lastName == makmes.lastName && e.firstName == makmes.firstName);
-    });
+      this.makmes.house.pic = LI.find('div.ad-image a').attr('href');
+      this.makmes.house.title = LI.find('h1[itemprop="name"]').text();
+      this.makmes.house.address = LI.find('td[itemprop="address"]').text();
+      this.makmes.house.price = LI.find('span[itemprop="priceRange"]').text().replace('/Za nehnuteľnosť', '');
+      this.makmes.house.size = LI.find('td:contains("Celková plocha")').next().text();
+      this.makmes.house.propid = LI.find('td:contains("Číslo zakázky")').next().text();
+      this.makmes.makler = this.team.find(e => e.lastName == this.makmes.lastName && e.firstName == this.makmes.firstName);
+      console.log(this.makmes);
+      return this.makmes;
   }
 
 

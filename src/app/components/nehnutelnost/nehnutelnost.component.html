@@ -3,24 +3,24 @@
       <div class="propertyimg">
           <img class="img-fluid" src="{{ makmes.house.pic }}">
           <div class="price">
-              <h2>95 000 €</h2>
+              <h2>{{ makmes.house.price }}</h2>
           </div>
       </div>
       <div class="propertydesc">
-          <h2>Predaj domu 85 m2, Dunajská Streda</h2>
+          <h2>{{ makmes.house.title }}</h2>
       </div>
       <div class="propertyic">
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 rooms">
-              Izby: 4
+              Izby: {{ makmes.house.rooms }}
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 rozloha">
-              Rozloha: 85 m²
+              Rozloha: {{ makmes.house.size }}
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 region">
-              Dunajská Streda, TT
+            {{ makmes.house.address }}
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 id">
-              044-N05654
+            {{ makmes.house.propid }}
           </div>
       </div>
       <hr class="propertyhr">

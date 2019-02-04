@@ -22,6 +22,7 @@ export class TeamEditComponent implements OnInit {
     "img": "",
     "tel": "",
     "email": "",
+    "webnehnutelnosti":"",
     "web": "",
     "bio": {
       "sk": "",
@@ -33,7 +34,7 @@ export class TeamEditComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    
   }
 
   editMakler(index) {
@@ -46,6 +47,7 @@ export class TeamEditComponent implements OnInit {
         "img": "assets/images/makler.jpg",
         "tel": "",
         "email": "",
+        "webnehnutelnosti": "",
         "web": "",
         "bio": {
           "sk": "",
@@ -66,7 +68,6 @@ export class TeamEditComponent implements OnInit {
       this.team[this.userIndex] = JSON.parse(JSON.stringify(this.editable));
     }
     this.saveTeam();
-    alert("Makler ulozeny");
   }
 
   deleteMakler(index) {
@@ -78,6 +79,7 @@ export class TeamEditComponent implements OnInit {
 
   saveTeam() {
     this.dataService.saveTeam(this.team);
+    alert("Makler ulozeny");
   }
 
 

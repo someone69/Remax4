@@ -1,8 +1,8 @@
 <div class="container">
-<div class="row section equal">
+<div *ngIf="makmes!=null" class="row section equal">
   <h1 class="makmes text-center col-12">Maklér mesiaca december odporúča:</h1>
-  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-      <a href="http://www.remax-slovakia.sk/reality/nehnutelnosti-maklera/2548/alzbeta-csibova/">
+  <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+      <a href="{{ user.webnehnutelnosti }}">
           <div class="circlecontainer">
               <img class="profilebox smaller img-fluid" src="{{ user.img }}">
           </div>
@@ -34,8 +34,8 @@
         </h4>
     </div>
   </div>
-  <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 prop">
-      <app-nehnutelnost></app-nehnutelnost>
+  <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 prop">
+      <app-nehnutelnost [makmes]="makmes"></app-nehnutelnost>
   </div>
 </div>
 

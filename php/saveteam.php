@@ -8,4 +8,6 @@ $response = file_get_contents('php://input');
 $fp = fopen('team.json', 'w');
 fwrite($fp, $response);
 fclose($fp);
+
+echo $response;
 ?> 

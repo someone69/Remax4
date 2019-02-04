@@ -20,6 +20,9 @@ import { TeamComponent } from './components/team/team.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TeamEditComponent } from './components/team-edit/team-edit.component';
 import { MakmesEditComponent } from './components/makmes-edit/makmes-edit.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { PostComponent } from './components/post/post.component';
+import { EditPostComponent } from './components/edit-post/edit-post.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { MakmesEditComponent } from './components/makmes-edit/makmes-edit.compon
     TeamComponent,
     FooterComponent,
     TeamEditComponent,
-    MakmesEditComponent
+    MakmesEditComponent,
+    PostsComponent,
+    PostComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,

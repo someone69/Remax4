@@ -7,6 +7,7 @@ export interface Makler {
     tel: string,
     email: string,
     web: string,
+    webnehnutelnosti: string
     bio:{
         sk: string,
         hu: string
